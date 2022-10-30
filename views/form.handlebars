@@ -1,0 +1,29 @@
+<div class="container-fluid my-5 py-5 ">
+    <div class="card mx-5 bg-light fw-bold rounded shadow-lg text-dark">
+        <img src="https://media.npr.org/assets/img/2022/03/18/copy-of-lk_books_harlan-158_wide-0f0aeda65737f176434f8980e200eccd3885d689-s1100-c50.jpg"
+            alt="Book" class="card-img-top" height="120px" style="object-fit: cover; opacity: 0.75;">
+        <div class="card-body">
+            <div class="card-title">ΒΙΒΛΙΟΘΗΚΗ</div>
+            <div class="card-subtitle mb-5 text-muted">εισαγωγή βιβλίου</div>
+                <form action="/doaddbook" method="post" class="myForm">
+                    <div class="mb-3">
+                        <label for="newTitle" class="form-label">Tίτλος Βιβλίου</label>
+                        <input type="text" class="form-control rounded {{#if message.newTitle}} is-invalid {{/if}}" 
+                            id="newTitle" value="{{title}}" name="newTitle"
+                            placeholder="Βιβλίο" />
+                        <div class="valid-feedback"> Μια χαρά!</div>
+                        <div class="invalid-feedback"> {{message.newTitle.msg}} </div>
+                    </div>
+                    <div class="mb-5">
+                        <label for="newAuthor" class="form-label">Όνομα Συγγραφέα</label>
+                        <input type="text" class="form-control rounded" id="newAuthor" value="{{author}}" name="newAuthor"
+                            placeholder="Συγγραφέας"/>
+                        <div class="valid-feedback"> Μια χαρά!</div>
+                        <div class="invalid-feedback"> Είναι υποχρεωτικό. </div>
+                    </div>
+                    <input type="submit" class="btn btn-outline-primary rounded-pill" value="ΕΙΣΑΓΩΓΗ">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

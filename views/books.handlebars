@@ -1,0 +1,25 @@
+{{#if books}}
+<div id="top" class="container-sm py-5">
+    <div class="card bg-light fs-6 shadow-lg">
+        <span class="text-light bg-dark fs-6 px-2 rounded-top">Πίνακας 1: Βιβλία {{size}}</span>
+        <table class="table table-light table-striped table-hover table-responsive">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">A/A</th><th>Τίτλος</th><th scope="col">Συγγραφέας</th> <th scope="col"> <a href="/addbookform" class="btn btn-sm btn-primary  text-white fs-6 px-3"> + </a> </th>
+            </tr>
+            </thead>
+            <tbody>
+        {{#each books}}    
+                <tr> 
+                    <td>  {{inc @index}} </td> <td> {{this.title}} </td>  <td> {{this.author}} </td>
+                    <td> <form action="/deletebook" method="post"> <input type="hidden" name="title" value="{{this.title}}">  <input class="btn btn-outline-danger btn-sm fs-6 px-3" type="submit" value="x"> </form> </td> 
+                </tr>
+        {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{/if}}
+{{#unless books}}
+    <p>Δεν υπάρχουν καταχωρημένα βιβλία</p>
+{{/unless}}

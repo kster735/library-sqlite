@@ -1,0 +1,8 @@
+# Να αγνοούνται τα node modules
+/node_modules
+# διάφορα αρχεία
+npm-debug.log
+# αρχείο με πληροφορίες φακέλου στο MacOS
+.DS_Store
+# το αρχείο dotenv (.env)
+*.env

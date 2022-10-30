@@ -1,0 +1,50 @@
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark px-5 sticky-top shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/books">
+      <img src="../../images/open-book-book-svgrepo-com.svg" alt="Library" width="36" height="36" class="m-0 p-0 fs-6">
+      Βιβλιοθήκη
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a id="books" class="nav-link" role="button" aria-current="page" href="/books">Βιβλία</a>
+        </li>
+        <li class="nav-item">
+          <a id="addbookform" class="nav-link" href="/addbookform">Εισαγωγή Βιβλίου</a>
+        </li>
+        <li class="nav-item">
+          <a id="about" class="nav-link" href="/about">Σχετικά</a>
+        </li>
+        {{#if username}}
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Αποσύνδεση</a>
+        </li>
+        
+        {{/if}}
+      </ul>
+      {{#if username}} 
+        <div class="nav-item fs-6 text-white">
+          Καλωσήρθες {{username}}!
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+
+{{#unless username}}
+
+<!-- Hero -->
+<div id="hero" class="container-fluid p-3 mx-auto bg-white text-black text-center">
+  <div id="hero-title" class="fs-1 fw-1">Καλωσήρθατε στη βιβλιοθήκη μας</div>
+  <a href="#footer">
+    <button class="btn btn-outline-light text-black rounded-pill">Κάτω</button>
+  </a>
+</div>
+
+{{/unless}}
+
